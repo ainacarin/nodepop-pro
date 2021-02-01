@@ -7,7 +7,6 @@ router.get('/', async function(req, res, next) {
     try{
         const resultado = await Advertisement.find();
         res.json(resultado);
-        //throw new Error('fallo intencionado'); //comentar la línea anterior
     }catch(err){
         next(err);
     }
