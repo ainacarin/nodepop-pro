@@ -21,6 +21,7 @@ router.get('/', async function(req, res, next) {
 router.post('/', async (req, res, next) => {
     try {
         const advertisementData = req.body;
+        advertisementData.name = advertisementData.name.toLowerCase();
         const advertisement = new Advertisement(advertisementData);
 
         const advertisementCreate = await advertisement.save(); 

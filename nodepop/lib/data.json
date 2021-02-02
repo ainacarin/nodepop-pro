@@ -1,7 +1,7 @@
 {
     "advertisements": [
       {
-        "name": "Bicicleta",
+        "name": "bicicleta",
         "sale": true,
         "price": 230.15,
         "image": "bici.jpg",
@@ -11,13 +11,74 @@
         ]
       },
       {
-        "name": "iPhone 3GS",
+        "name": "iphone 3GS",
         "sale": false,
         "price": 50.00,
         "image": "iphone.jpg",
         "tags": [
           "lifestyle",
           "mobile"
+        ]
+      },
+      {
+        "name": "ratón ergonómico",
+        "sale": true,
+        "price": 15.00,
+        "image": "ratonergo.jpg",
+        "tags": [
+          "work",
+          "mobile"
+        ]
+      },
+      {
+        "name": "teclado mecánico mars gaming",
+        "sale": true,
+        "price": 65.00,
+        "image": "tecladomarsgaming.jpg",
+        "tags": [
+          "work",
+          "mobile"
+        ]
+      },
+      {
+        "name": "patines linea",
+        "sale": false,
+        "price": 38.00,
+        "image": "patineslinea.jpg",
+        "tags": [
+          "lifestyle",
+          "motor"
+        ]
+      },
+      {
+        "name": "tablet teclast t10",
+        "sale": true,
+        "price": 189.00,
+        "image": "teclastt10.jpg",
+        "tags": [
+          "work",
+          "mobile"
+        ]
+      },
+      {
+        "name": "tablet samsung tab a",
+        "sale": false,
+        "price": 50.00,
+        "image": "tablettaba.jpg",
+        "tags": [
+          "work",
+          "mobile"
+        ]
+      },
+      {
+        "name": "iphone 12 Pro",
+        "sale": true,
+        "price": 857.00,
+        "image": "iphone12pro.jpg",
+        "tags": [
+          "lifestyle",
+          "mobile",
+          "work"
         ]
       }
     ],
