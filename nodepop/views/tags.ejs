@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <h2>Bienvenido a <%= title %></h2>
+    <h3><%= subtitle %></h3>
+    <% tags.forEach(tag => { %> 
+        <p> <%= tag.name %> </p>
+    <% }) %> 
+  </body>
+</html>

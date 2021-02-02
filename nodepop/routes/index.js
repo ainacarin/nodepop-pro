@@ -6,12 +6,15 @@ const Tag = require('../models/Tag');
 
 const imagesPath = 'images/';
 
-/* GET home page. */
+/** 
+ * List all advertisements - Home page
+ * GET /
+ */
 router.get('/', async function(req, res, next) {
-  
   try {
     res.locals.title = 'NODEPOP';
-    
+    res.locals.subtitle = 'Anuncios';
+
     const advertisementsResults = await Advertisement.find(); 
 
     advertisementsResults.forEach(advertisement => {
@@ -27,5 +30,25 @@ router.get('/', async function(req, res, next) {
     next(error);
   }
 });
+
+/** 
+ * TAGS List
+ * GET /tags
+ */
+router.get('/tags', async function(req, res, next) {
+  try {
+    res.locals.title = 'NODEPOP';
+    res.locals.subtitle = 'TAGS disponibles';
+
+    const tagsResults = await Tag.find(); 
+    
+    res.locals.tags = tagsResults;
+    
+    res.render('tags');
+  } catch (error) {
+    next(error);
+  }
+});
+
 
 module.exports = router;
