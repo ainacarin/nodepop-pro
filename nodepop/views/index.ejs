@@ -7,5 +7,21 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <% advertisements.forEach(advertisement => { %>
+      <div>
+        <p> <%= advertisement.name.toUpperCase() %> </p>
+        <p> <% if(advertisement.sale) { %> 
+          Se vende 
+        <% } else{ %>
+              Se busca
+        <% } %> </p>
+        <p><%= advertisement.price %> €</p>
+        <img src="<%=advertisement.image %>"/> 
+        <p>
+          <% advertisement.tags.forEach(tag => { %>
+            <%= tag %> 
+          <% }) %> </p>
+      </div>
+    <% }) %>
   </body>
 </html>
