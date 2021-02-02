@@ -13,13 +13,13 @@ const advertisementSchema = mongoose.Schema({
     collection: 'advertisements'
 });
 
-advertisementSchema.statics.list= function(data) {
+advertisementSchema.statics.list= function(queryData) {
 
     const filter = {};
-    const limit = parseInt(data.limit);
-    const skip = parseInt(data.skip);
+    const limit = parseInt(queryData.limit);
+    const skip = parseInt(queryData.skip);
     const fields = {};
-    const sort = data.sort;
+    const sort = queryData.sort;
 
     const query = Advertisement.find(filter);
     query.limit(limit);
