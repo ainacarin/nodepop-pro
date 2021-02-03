@@ -52,13 +52,34 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
+
+  //validation error
+  if(err.array) {
+    const errorInfo = err.array({ onlyFirstError: true })[0];
+    err.message = `Not valid - ${errorInfo.param} ${errorInfo.msg}`;
+    //indico el status de error semántico
+    err.status = 422;
+  }
+
+  // status error to json or render
+  res.status(err.status || 500);
+
+  //API error return json error
+  if(isAPIRequest(req)){
+    res.json({error: err.message });
+    return;
+  }
+
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
-  res.status(err.status || 500);
   res.render('error');
 });
+
+function isAPIRequest(req){
+  return req.originalUrl.indexOf('/api') === 0;
+}
 
 module.exports = app;
