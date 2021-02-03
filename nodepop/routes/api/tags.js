@@ -18,7 +18,7 @@ router.post('/', async (req, res, next) => {
     try {
         const tagData = req.body;
         const tag = new Tag(tagData);
-
+        tag.name = tag.name.toLowerCase();
         const tagCreate = await tag.save(); 
         
         res.status(201).json({ result: tagCreate });

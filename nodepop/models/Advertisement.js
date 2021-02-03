@@ -17,7 +17,7 @@ const advertisementSchema = mongoose.Schema(
 );
 
 advertisementSchema.statics.list = function (queryData) {
-  const filter = {};
+  var filter = {};
 
   if (queryData.tags) {
     const tags = queryData.tags.split(" ");
@@ -27,9 +27,21 @@ advertisementSchema.statics.list = function (queryData) {
   }
 
   if(queryData.name) {
-    console.log("NAme", queryData.name);
-      filter.name = { $regex: "^"+queryData.name, $options: 'm' };
-      console.log(filter.name)
+    filter.name = { $regex: "^"+queryData.name, $options: 'm' };
+    console.log(filter.name)
+  }
+  
+  if(queryData.sale) {
+    filter.sale = queryData.sale;
+  }
+
+  if(queryData.min) {
+    filter.price = { $gte: queryData.min };
+    if(queryData.max) {
+      filter.price = { $gte: queryData.min, $lte: queryData.max };
+    }
+  } else if(queryData.max) {
+    filter.price = { $lte: queryData.max };
   }
   
   const limit = parseInt(queryData.limit);
