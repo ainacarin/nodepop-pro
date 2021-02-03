@@ -3,6 +3,8 @@
 const mongoose = require("mongoose");
 
 const tagsValues = ["work", "lifestyle", "motor", "mobile"];
+const min = 0;
+const max = 1;
 
 //Schema
 const advertisementSchema = mongoose.Schema(
@@ -62,13 +64,26 @@ advertisementSchema.statics.list = function (queryData) {
     filter.sale = queryData.sale;
   }
 
-  if (queryData.min) {
+/*   if (queryData.min) {
     filter.price = { $gte: queryData.min };
     if (queryData.max) {
       filter.price = { $gte: queryData.min, $lte: queryData.max };
     }
   } else if (queryData.max) {
     filter.price = { $lte: queryData.max };
+  } */
+  if(queryData.price) {
+    const prices = queryData.price.split("-");
+    console.log('prices ', prices);
+    if(prices.length == 2) {
+      if(prices[min] != '' && prices[max] != '') {
+        filter.price = { $gte: prices[min], $lte: prices[max] };
+      } else if(prices[min] != '') {
+        filter.price = { $gte: prices[min] };
+      } else {
+        filter.price = { $lte: prices[max] };
+      }
+    }
   }
 
   const limit = parseInt(queryData.limit);
