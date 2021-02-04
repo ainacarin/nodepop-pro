@@ -1,9 +1,7 @@
 "use strict";
 
 const mongoose = require("mongoose");
-// const Tag = require("./Tag");
-// const data = require('../lib/data.json');
-// const tagsValues = ["work", "lifestyle", "motor", "mobile"];
+
 const min = 0;
 const max = 1;
 
@@ -29,19 +27,7 @@ const advertisementSchema = mongoose.Schema(
       required: [true, "Advertisement price is required.  Format = XXXXX.XX"],
     },
     image: String,
-    // tags: [String],
     tags: [String]
-    // {
-    //   type: [String],
-    //   validate: {
-    //     validator: async function (v) {
-    //       const tagsValues = await Tag.find();
-    //       const filtered = tagsValues.filter(tagValue => v.includes(tagValue.name));
-    //       return filtered.length === v.length;
-    //     },
-    //     message: "Tags are predefinited",
-    //   },
-    // },
   },
   {
     collection: "advertisements",
@@ -67,14 +53,6 @@ advertisementSchema.statics.list = function (queryData) {
     filter.sale = queryData.sale;
   }
 
-/*   if (queryData.min) {
-    filter.price = { $gte: queryData.min };
-    if (queryData.max) {
-      filter.price = { $gte: queryData.min, $lte: queryData.max };
-    }
-  } else if (queryData.max) {
-    filter.price = { $lte: queryData.max };
-  } */
   if(queryData.price) {
     const prices = queryData.price.split("-");
     console.log('prices ', prices);
@@ -94,18 +72,17 @@ advertisementSchema.statics.list = function (queryData) {
   const limit = parseInt(queryData.limit);
   const skip = parseInt(queryData.skip);
 
-  const fields = {};
+  // const fields = {};
 
   const sort = queryData.sort;
 
   const query = Advertisement.find(filter);
   query.limit(limit);
   query.skip(skip);
-  query.select(fields);
+  // query.select(fields);
   query.sort(sort);
 
-  //ejecuta query
-  return query.exec(); //devuelve una promesa
+  return query.exec();
 };
 
 //Model

@@ -8,7 +8,6 @@ var logger = require('morgan');
  * ROUTERS
  */
 var indexRouter = require('./routes/index');
-/* var usersRouter = require('./routes/users'); */
 
 /**
  * VARIABLES
@@ -43,7 +42,6 @@ app.use('/api/tags', require('./routes/api/tags'));
  * WEBSITE ROUTES
  */
 app.use('/', indexRouter);
-/* app.use('/users', usersRouter); */
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -57,7 +55,7 @@ app.use(function(err, req, res, next) {
   if(err.array) {
     const errorInfo = err.array({ onlyFirstError: true })[0];
     err.message = `Not valid - ${errorInfo.param} ${errorInfo.msg}`;
-    //indico el status de error semántico
+
     err.status = 422;
   }
 

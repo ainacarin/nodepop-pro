@@ -5,8 +5,6 @@ var router = express.Router();
 /* GET /api/advertisements */
 router.get('/', async function(req, res, next) {
     try{
-/*         const resultado = await Advertisement.find(); */
-
         const result = await Advertisement.list(req.query);
 
         res.json(result);

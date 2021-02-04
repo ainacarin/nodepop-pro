@@ -2,7 +2,6 @@
 
 const mongoose = require('mongoose');
 const Advertisement = require('../models/Advertisement');
-// const Tag = require('../models/Tag');
 
 const data = require('./data.json');
 
@@ -20,18 +19,6 @@ mongoose.connect('mongodb://localhost/nodepop', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(async function() {
-    // await Tag.deleteMany().then(async function(){
-    //     console.log('Colección Tag borrada');
-    //     await Tag.insertMany(data.tags).then(function() {
-    //         console.log('Colección Tag poblada');
-    //         return;
-    //     })
-    //     return;
-    // }).catch(function() {
-    //     console.log('Error al borrar colección Tag \n Colección Advertisement no tratada');
-    //     process.exit(1); 
-    // });
-
     await Advertisement.deleteMany().then(async function(){
         console.log('Colección Advertisement borrada');
         await Advertisement.insertMany(data.advertisements).then(function() {
