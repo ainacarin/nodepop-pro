@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 const Advertisement = require('../models/Advertisement');
-const Tag = require('../models/Tag');
+// const Tag = require('../models/Tag');
 
 const imagesPath = 'images/';
 
