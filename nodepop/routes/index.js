@@ -35,12 +35,32 @@ router.get('/', async function(req, res, next) {
  * TAGS List
  * GET /tags
  */
+// router.get('/tags', async function(req, res, next) {
+//   try {
+//     res.locals.title = 'NODEPOP';
+//     res.locals.subtitle = 'TAGS disponibles';
+
+//     const tagsResults = await Tag.find(); 
+    
+//     res.locals.tags = tagsResults;
+    
+//     res.render('tags');
+//   } catch (error) {
+//     next(error);
+//   }
+// });
+
+
+/** 
+ * TAGS List
+ * GET /tags
+ */
 router.get('/tags', async function(req, res, next) {
   try {
     res.locals.title = 'NODEPOP';
     res.locals.subtitle = 'TAGS disponibles';
 
-    const tagsResults = await Tag.find(); 
+    const tagsResults = await Advertisement.distinct("tags");
     
     res.locals.tags = tagsResults;
     
@@ -49,6 +69,5 @@ router.get('/tags', async function(req, res, next) {
     next(error);
   }
 });
-
 
 module.exports = router;

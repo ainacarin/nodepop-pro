@@ -1,8 +1,9 @@
 "use strict";
 
 const mongoose = require("mongoose");
-
-const tagsValues = ["work", "lifestyle", "motor", "mobile"];
+// const Tag = require("./Tag");
+// const data = require('../lib/data.json');
+// const tagsValues = ["work", "lifestyle", "motor", "mobile"];
 const min = 0;
 const max = 1;
 
@@ -29,16 +30,18 @@ const advertisementSchema = mongoose.Schema(
     },
     image: String,
     // tags: [String],
-    tags: {
-      type: [String],
-      validate: {
-        validator: function (v) {
-          const filtered = tagsValues.filter(tagValue => v.includes(tagValue));
-          return filtered.length === v.length;
-        },
-        message: "Tags only can be: work, lifestyle, mortor and/or mobile",
-      },
-    },
+    tags: [String]
+    // {
+    //   type: [String],
+    //   validate: {
+    //     validator: async function (v) {
+    //       const tagsValues = await Tag.find();
+    //       const filtered = tagsValues.filter(tagValue => v.includes(tagValue.name));
+    //       return filtered.length === v.length;
+    //     },
+    //     message: "Tags are predefinited",
+    //   },
+    // },
   },
   {
     collection: "advertisements",
@@ -83,6 +86,8 @@ advertisementSchema.statics.list = function (queryData) {
       } else {
         filter.price = { $lte: prices[max] };
       }
+    } else if(prices.length == 1){
+      filter.price = queryData.price;
     }
   }
 
