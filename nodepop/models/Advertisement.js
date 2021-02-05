@@ -46,7 +46,6 @@ advertisementSchema.statics.list = function (queryData) {
 
   if (queryData.name) {
     filter.name = { $regex: "^" + queryData.name, $options: "m" };
-    console.log(filter.name);
   }
 
   if (queryData.sale) {
@@ -55,7 +54,6 @@ advertisementSchema.statics.list = function (queryData) {
 
   if(queryData.price) {
     const prices = queryData.price.split("-");
-    console.log('prices ', prices);
     if(prices.length == 2) {
       if(prices[min] != '' && prices[max] != '') {
         filter.price = { $gte: prices[min], $lte: prices[max] };
