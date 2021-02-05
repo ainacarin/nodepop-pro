@@ -2,27 +2,43 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/reset.css" />
+    <link rel="stylesheet" href="/stylesheets/variables.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/navbar.css" />
+    <link rel="stylesheet" href="/stylesheets/index.css" />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <h2>Bienvenido a <%= title %></h2>
-    <h3><%= subtitle %></h3>
-    <% advertisements.forEach(advertisement => { %>
-      <div>
-        <p> <%= advertisement.name.toUpperCase() %> </p>
-        <p> <% if(advertisement.sale) { %> 
-          Se vende 
-        <% } else{ %>
-              Se busca
-        <% } %> </p>
-        <p><%= advertisement.price %> €</p>
-        <img src="<%=advertisement.image %>"/> 
-        <p>
-          <% advertisement.tags.forEach(tag => { %>
-            <%= tag %> 
-          <% }) %> </p>
-      </div>
-    <% }) %>
+    <!--nav class="navbar">
+      <h1 class="logo"><%= title %></h1>
+    </nav-->
+    <% include mainhead %>
+
+    <main class="main-container">
+      <h2 class="subtitle"><%= subtitle %></h2>
+      <section class="section">
+        <% advertisements.forEach(advertisement => { %>
+        <div class="card">
+          <p class="card-title"><%= advertisement.name.toUpperCase() %></p>
+          <div class="card-content">
+            <p class="card-sale">
+              <% if(advertisement.sale) { %> 
+                Se vende 
+              <% } else{ %> 
+                Se busca <% }
+              %>
+            </p>
+            <img class="card-image" src="<%=advertisement.image %>" />
+            <p class="card-price"><%= advertisement.price %> €</p>
+            <ul class="card-list-tags">
+              <% advertisement.tags.forEach(tag => { %>
+                <li class="item-list-tags"> <%= tag %> </li> 
+              <% }) %>
+            </ul>
+          </div>
+        </div>
+        <% }) %>
+      </section>
+    </main>
   </body>
 </html>

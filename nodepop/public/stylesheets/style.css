@@ -1,8 +1,19 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  font-family: nodepop-text, Arial, Helvetica, sans-serif;
+  font-size: var(--font-size);
 }
 
-a {
-  color: #00B7FF;
+body {
+  padding-top: var(--navbar-height);
+  background-color: var(--back-color);
+  color: var(--primary-color);
+} 
+
+a,
+a:link,
+a:visited,
+a:focus {
+text-decoration: none;
+color: var(--primary-color);
 }
+

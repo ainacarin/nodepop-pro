@@ -12,7 +12,7 @@ const imagesPath = 'images/';
 router.get('/', async function(req, res, next) {
   try {
     res.locals.title = 'NODEPOP';
-    res.locals.subtitle = 'Anuncios';
+    res.locals.subtitle = '¡Compra o vende!';
 
     const advertisementsResults = await Advertisement.list(req.query);
     advertisementsResults.forEach(advertisement => {

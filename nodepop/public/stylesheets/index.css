@@ -1,0 +1,84 @@
+.main-container {
+
+        height: calc(100% - var(--navbar-height));
+        width: 100%;
+        padding: 0 0.5rem 0 0.5rem;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        background-color: var(--back-color);
+        font-weight: bold;
+    }
+
+
+.subtitle {
+    display: block;
+    font-size: 1.25rem;
+}
+
+.section {
+    width: 100%;
+    padding: 0.5rem 1.5rem;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card {
+    position: relative;
+    margin: 0.1rem;
+    max-width: 15rem;
+
+    display: inline-block;
+
+    box-shadow: 0 0 0.25rem var(--mid-color);
+    border-radius: 1rem;
+}
+
+.card-title{
+    text-align: center;
+    font-size: 1.10rem;
+
+    border-bottom: 0.1rem dotted var(--mid-color);
+}
+
+.card-content {
+    font-family: nodepop-light-text;
+}
+
+.card-sale, .card-price {
+    margin: 0.5rem;
+}
+
+.card-sale {
+    text-align: left;
+}
+
+.card-price {
+    text-align: right;
+}
+
+.card-list-tags, .list-tags {
+    padding: 0;
+    margin: 0.5rem;
+    list-style: none;
+    
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+.item-list-tags {
+    position: relative;
+    display: inline-block;
+    padding: 0.5rem;
+    box-shadow: 0 0 0.25rem var(--mid-color) inset;
+    border-radius: 1rem;
+    margin: 0.25rem;
+}

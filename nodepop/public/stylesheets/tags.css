@@ -1,0 +1,17 @@
+.list-tags {
+    padding: 0;
+    margin: 0.5rem;
+    list-style: none;
+    
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+.item-list-tags {
+    position: relative;
+    display: inline-block;
+    padding: 0.5rem;
+    box-shadow: 0 0 0.25rem var(--mid-color) inset;
+    border-radius: 1rem;
+    margin: 0.25rem;
+}
