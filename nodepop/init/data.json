@@ -62,7 +62,7 @@
       },
       {
         "name": "tablet samsung tab a",
-        "sale": false,
+        "sale": true,
         "price": 50.00,
         "image": "tablettaba.jpg",
         "tags": [

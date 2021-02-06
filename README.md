@@ -26,7 +26,7 @@ Para la creación y poblado de la base de datos, se requiere disponer de la base
 
 #### 3. Instalación e inicialización de la aplicación
 Para hacer uso de la aplicación *NODEPOP*, se debe acceder a la carpeta del proyecto y seguir los siguientes pasos:
-1. Ejecutar el comando *npm insall* para instalar todo lo necesario para hacer uso de la aplicación. 
+1. Ejecutar el comando *npm install* para instalar todo lo necesario para hacer uso de la aplicación. 
 2. Ejecutar el comando *npm run installDB* para poblar la base de datos.
 3. Ejecutar el comando *npm run dev* para arrancar e iniciar la aplicación.
 
@@ -69,12 +69,12 @@ Los filtros posibles son los que a continuación se describen, los cuales se añ
 - Venta o Búsqueda: para el caso en el que se desee el listado de anuncios disponibles para venta, sería **sale=true** y para el caso de obtener el listado de artículos disponibles para búsqueda, sería **sale=false**.
 - Paginación: para hacer uso de la paginación de un listado, se emplearían conjuntamente **limit=númeroDeAnunciosMostrados** y *skip=númeroDeAnunciosYaMostrados*, donde *númeroDeAnunciosMostrados* corresponden con el número de anuncios a mostras en el listado deseado y *númeroDeAnunciosYaMostrados*, con el número de anuncios ya mostrados anteriormente, es decir, aquellos que se salta del listado obtenido.
 
-Adicionalmente, se puede obtener un listado ordenado por alguno de las propiedades, en cuyo caso se usaría **sort=propiedad**, donde *propiedad* puede ser alguno de los siguientes valores: name, price.
+Adicionalmente, se puede obtener un listado **ordenado** por alguno de las propiedades, en cuyo caso se usaría **sort=propiedad**, donde *propiedad* puede ser alguno de los siguientes valores: name, price. Para indicar un orden inverso, sería **sort=-propiedad**.
 
-Para combinar los filtros y poder indicar varios, se emplea el carácter *&*.
+Para combinar los filtros y poder indicar varios seguidos, se emplea el carácter *&* entre cada uno de ellos.
 
 #### 5. Ejemplo de uso
 Un **ejemplos** de obtención de listados de anuncios con varios filtros, para cada caso, podría ser:
-- Para *web*: **localhost:3000?tag=mobile&sale=false&name=tab&price=50-&limit=2&skip=1&sort=price**
-- Para *api*: **localhost:3000/api/advertisements?tag=mobile&sale=false&name=tab&price=50-&limit=2&skip=0&sort=price**
-El listado obtenido estaría paginado y para el caso de ejemplo, correspondería con la primera página, en la que se mostraría un total de 2 anuncios, con el o los tags deseados (separados por espacios), que se busquen, con un nombre que empiece por *tab*, con un precio mínimo de 50 euros y ordenados por precio.
+- Para *web*: **localhost:3000?tag=mobile&sale=true&name=tab&price=50-&limit=2&skip=0&sort=price**
+- Para *api*: **localhost:3000/api/advertisements?tag=mobile&sale=true&name=tab&price=50-&limit=2&skip=0&sort=price**
+El listado obtenido estaría paginado y para el caso de ejemplo, correspondería con la primera página, en la que se mostraría un total de 2 anuncios (si los hubiera), con el o los tags deseados (separados por espacios), que se venden, con un nombre que empiece por *tab*, con un precio mínimo de 50 euros y ordenados por precio.
