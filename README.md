@@ -75,6 +75,6 @@ Para combinar los filtros y poder indicar varios seguidos, se emplea el carácte
 
 #### 5. Ejemplo de uso
 Un **ejemplos** de obtención de listados de anuncios con varios filtros, para cada caso, podría ser:
-- Para *web*: **localhost:3000?tag=mobile&sale=true&name=tab&price=50-&limit=2&skip=0&sort=price**
-- Para *api*: **localhost:3000/api/advertisements?tag=mobile&sale=true&name=tab&price=50-&limit=2&skip=0&sort=price**
+- Para *web*: **localhost:3000?tags=mobile&sale=true&name=tab&price=50-&limit=2&skip=0&sort=price**
+- Para *api*: **localhost:3000/api/advertisements?tags=mobile&sale=true&name=tab&price=50-&limit=2&skip=0&sort=price**
 El listado obtenido estaría paginado y para el caso de ejemplo, correspondería con la primera página, en la que se mostraría un total de 2 anuncios (si los hubiera), con el o los tags deseados (separados por espacios), que se venden, con un nombre que empiece por *tab*, con un precio mínimo de 50 euros y ordenados por precio.
