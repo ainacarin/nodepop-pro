@@ -48,7 +48,7 @@ Una vez iniciada la aplicación, desde la aplicación de creación de peticiones
 1. Operación 1: tipo *GET* a *localhost:3000/api/advertisements*
     Los filtros se añaden conforme al apartado *4.3* a partir de la ruta *localhost:3000/api/advertisements?*.
 2. Operación 2: tipo *GET* a *localhost:3000/api/tags*
-3. Operación 3: tipo *POST* a *localhost:3000/api/tags*, añadiendo todos los atributos o valores del anuncio en el *body*. 
+3. Operación 3: tipo *POST* a *localhost:3000/api/advertisements*, añadiendo todos los atributos o valores del anuncio en el *body*. 
     Para la creación de un artículo, los datos a introducir son: 
     - **name**: cadena de texto con el nombre del artículo.
     - **sale**: valor *true* para el caso de ser un artículo para ser vendido y *false* para el caso de ser un artículo que se busca.
