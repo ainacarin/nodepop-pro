@@ -67,7 +67,7 @@ Los filtros posibles son los que a continuación se describen, los cuales se añ
     -- Para indicar un único precio concreto: **price=precio**, donde *precio* corresponde con la cantidad deseada, expresada en números.
 - Nombre: permite buscar por tanto por el nombre concreto como el inicio del mismo, para ello se emplea **name=nombre**, donde *nombre* corresponde con el nombre del artículo de interés.
 - Venta o Búsqueda: para el caso en el que se desee el listado de anuncios disponibles para venta, sería **sale=true** y para el caso de obtener el listado de artículos disponibles para búsqueda, sería **sale=false**.
-- Paginación: para hacer uso de la paginación de un listado, se emplearían conjuntamente **limit=númeroDeAnunciosMostrados** y *skip=númeroDeAnunciosYaMostrados*, donde *númeroDeAnunciosMostrados* corresponden con el número de anuncios a mostras en el listado deseado y *númeroDeAnunciosYaMostrados*, con el número de anuncios ya mostrados anteriormente, es decir, aquellos que se salta del listado obtenido.
+- Paginación: para hacer uso de la paginación de un listado, se emplearían conjuntamente **limit=númeroDeAnunciosMostrados** y *skip=númeroDeAnunciosYaMostrados*, donde *númeroDeAnunciosMostrados* corresponden con el número de anuncios a mostrar en el listado deseado y *númeroDeAnunciosYaMostrados*, con el número de anuncios ya mostrados anteriormente, es decir, aquellos que se salta del listado obtenido.
 
 Adicionalmente, se puede obtener un listado **ordenado** por alguno de las propiedades, en cuyo caso se usaría **sort=propiedad**, donde *propiedad* puede ser alguno de los siguientes valores: name, price. Para indicar un orden inverso, sería **sort=-propiedad**.
 

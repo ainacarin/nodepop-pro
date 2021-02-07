@@ -12,6 +12,12 @@ const advertisementSchema = mongoose.Schema(
       type: String,
       index: true,
       required: [true, "Advertisement name is required"],
+      validate: {
+        validator: async function (value) {
+          return (value.trim());
+        },
+        message: "Advertisement name can´t be an empty a value",
+      },
     },
     sale: {
       type: Boolean,
