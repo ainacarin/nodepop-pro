@@ -20,7 +20,7 @@ router.get('/', async function(req, res, next) {
         advertisement.image = imagesPath.concat(advertisement.image);
       }
     });
-    
+
     res.locals.advertisements = advertisementsResults;
     
     res.render('index');

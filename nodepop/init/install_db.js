@@ -15,7 +15,7 @@ mongoose.connection.on('error', err => {
 mongoose.connection.once('open', () => console.log(`Conectado a MongoDB en ${mongoose.connection.name} database`));
 
 //Connection and populate with data
-mongoose.connect('mongodb://localhost/nodepop', {
+mongoose.connect('mongodb://localhost/nodepoppro', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(async function() {
