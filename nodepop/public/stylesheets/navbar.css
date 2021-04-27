@@ -8,12 +8,47 @@
     z-index: 99;
     background-color: whitesmoke;
     box-shadow: 0 0.1rem 0.2rem rgba(0,0,0,0.3);
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .logo {
     margin-top: 0;
-    text-align: center;
+    margin-bottom: 0;
+    padding-left: 1rem;
+    /* text-align: center; */
     font-size: 1.75rem;
-
     line-height: var(--navbar-height);
+    width: 75%;
+}
+
+.locales-container {
+    margin-bottom: 0;
+    padding-right: 1rem;
+    line-height: var(--navbar-height);
+    width: 25%;
+
+
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+}
+
+.locales-link {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    line-height: var(--navbar-height);
+    text-align: center;
+
+}
+
+.locales-link:hover {
+    text-decoration: underline;
+    font-size: 1.25rem;
+
 }

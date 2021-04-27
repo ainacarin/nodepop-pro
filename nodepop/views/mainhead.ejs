@@ -1,3 +1,8 @@
 <nav class="navbar">
   <h1 class="logo"><%= title %></h1>
+  <div class="locales-container">
+    <% getLocales().forEach(locale => { %>
+    <a class="locales-link" href="/locale/<%= locale %>"><%= locale %></a>
+    <% }) %>
+  </div>
 </nav>
