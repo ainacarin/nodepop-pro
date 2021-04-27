@@ -22,11 +22,11 @@
           <p class="card-title"><%= advertisement.name.toUpperCase() %></p>
           <div class="card-content">
             <p class="card-sale">
-              <% if(advertisement.sale) { %> 
-                Se vende 
-              <% } else{ %> 
-                Se busca <% }
-              %>
+              <% if(advertisement.sale) { %>
+                <%= __('Se vende')%>
+                <%} else{  %>
+                  <%= __('Se busca') %>
+                 <% } %>
             </p>
             <img class="card-image" src="<%=advertisement.image %>" />
             <p class="card-price"><%= advertisement.price %> €</p>

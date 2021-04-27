@@ -8,6 +8,7 @@ var logger = require('morgan');
  * ROUTERS
  */
 var indexRouter = require('./routes/index');
+var localeRouter = require('./routes/locale');
 
 /**
  * VARIABLES
@@ -46,6 +47,7 @@ app.use(i18n.init);
  * WEBSITE ROUTES
  */
 app.use('/', indexRouter);
+app.use('/locale', localeRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
