@@ -38,6 +38,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api/advertisements', require('./routes/api/advertisements'));
 app.use('/api/tags', require('./routes/api/tags'));
 
+/** Setup i18n LANG */
+const i18n = require('./lib/i18nConfigure');
+app.use(i18n.init);
+
 /**
  * WEBSITE ROUTES
  */
