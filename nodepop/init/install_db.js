@@ -17,7 +17,8 @@ mongoose.connection.once('open', () => console.log(`Conectado a MongoDB en ${mon
 //Connection and populate with data
 mongoose.connect('mongodb://localhost/nodepoppro', {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true
 }).then(async function() {
     await Advertisement.deleteMany().then(async function(){
         console.log('Colección Advertisement borrada');

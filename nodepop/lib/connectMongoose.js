@@ -13,7 +13,8 @@ mongoose.connection.once('open', () => console.log('Conectado a MongoDB en', mon
 
 mongoose.connect('mongodb://localhost/nodepoppro', {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true
 });
 
 module.exports = mongoose.connection;

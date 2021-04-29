@@ -2,8 +2,11 @@ var express = require('express');
 const Advertisement = require('../../models/Advertisement');
 var router = express.Router();
 
+/**Midleware Auth JWT */
+const authJWT = require('../../lib/authJWT');
+
 /* GET /api/advertisements */
-router.get('/', async function(req, res, next) {
+router.get('/', authJWT, async function(req, res, next) {
     try{
         const result = await Advertisement.list(req.query);
 
