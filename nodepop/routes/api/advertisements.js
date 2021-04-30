@@ -1,6 +1,8 @@
 var express = require('express');
+const multer = require('multer');
 const Advertisement = require('../../models/Advertisement');
 var router = express.Router();
+const upload = multer({ dest: './public/images/' })
 
 /**Midleware Auth JWT */
 const authJWT = require('../../lib/authJWT');
@@ -19,11 +21,15 @@ router.get('/', authJWT, async function(req, res, next) {
 
 
 /* POST /api/advertisements */
-router.post('/', async (req, res, next) => {
+router.post('/', upload.single('image'), async (req, res, next) => {
     try {
         const advertisementData = req.body;
+        if(req.file) {
+            advertisementData.image = req.file.filename;
+        } else{
+            advertisementData.image = '';
+        }
         advertisementData.name = advertisementData.name.toLowerCase();
-        advertisementData.image = advertisementData.name.replace(/ /g,'');
         const advertisement = new Advertisement(advertisementData);
 
         const advertisementCreate = await advertisement.save(); 
