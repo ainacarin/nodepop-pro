@@ -6,7 +6,8 @@
     "start": "node ./bin/www",
     "installDB": "node ./init/install_db.js",
     "initDB": "node ./init/init-db.js",
-    "dev": "cross-env NODE_ENV=development nodemon"
+    "dev": "cross-env NODE_ENV=development nodemon",
+    "microservices": "node ./microservices/ThumbnailService.js"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
