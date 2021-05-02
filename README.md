@@ -50,7 +50,7 @@ Una vez iniciada la aplicación, desde la aplicación de creación de peticiones
     Los parámetros a incluir en el body son:
     - **email**: cadena de texto con el email del usuario.
     - **password**: cadena de texto con la contraseña del usuario. 
-    Se dispone de un usuario por defecto cuya datos son:
+    Se dispone de un usuario por defecto cuyos datos son:
     - **email**: admin@example.com
     - **password**: 1234
 1. Operación 1: tipo *GET* a *localhost:3000/api/advertisements*
