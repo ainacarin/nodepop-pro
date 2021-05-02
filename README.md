@@ -27,8 +27,9 @@ Para la creación y poblado de la base de datos, se requiere disponer de la base
 #### 3. Instalación e inicialización de la aplicación
 Para hacer uso de la aplicación *NODEPOP*, se debe acceder a la carpeta del proyecto y seguir los siguientes pasos:
 1. Ejecutar el comando *npm install* para instalar todo lo necesario para hacer uso de la aplicación. 
-2. Ejecutar el comando *npm run installDB* para poblar la base de datos.
-3. Ejecutar el comando *npm run dev* para arrancar e iniciar la aplicación.
+2. Ejecutar el comando *npm run initDB* para poblar la base de datos.
+3. Ejecutar el comando *npm run dev* para arrancar e iniciar la aplicación. 
+4. Ejecutar el comando *npm run microservices* para arrancar el microservicio correspondiente.
 
 #### 4. Guías de uso
 Una vez iniciada la aplicación, ésta permite realizar las siguientes operaciones:
@@ -45,16 +46,23 @@ Una vez iniciada la aplicación, desde un navegador, las rutas de la aplicación
 
 #### 4.2. **NODEPOP** como API
 Una vez iniciada la aplicación, desde la aplicación de creación de peticiones (*Postman*), las rutas para las diferentes operaciones permitidas son:
+0. Autenticación de usuario: tipo *POST* a *localhost:3000/api/authenticate.
+    Los parámetros a incluir en el body son:
+    - **email**: cadena de texto con el email del usuario.
+    - **password**: cadena de texto con la contraseña del usuario. 
 1. Operación 1: tipo *GET* a *localhost:3000/api/advertisements*
     Los filtros se añaden conforme al apartado *4.3* a partir de la ruta *localhost:3000/api/advertisements?*.
+    Para esta petición se requiere estar autenticado previamente, según se describe en el punto *4.2.0*
 2. Operación 2: tipo *GET* a *localhost:3000/api/tags*
 3. Operación 3: tipo *POST* a *localhost:3000/api/advertisements*, añadiendo todos los atributos o valores del anuncio en el *body*. 
     Para la creación de un artículo, los datos a introducir son: 
     - **name**: cadena de texto con el nombre del artículo.
     - **sale**: valor *true* para el caso de ser un artículo para ser vendido y *false* para el caso de ser un artículo que se busca.
     - **price**: cantidad expresada en números. Para el caso de venta, cantidad por la que se ofrece para vender y en el caso de ser buscado, sería la cantidad numérica máxima a pagar por el artículo.
-    - **image**: cadena de texto con el nombre de la imagen asociada al producto.
+    - **image**: tipo *file* de la imagen asociada al producto a añadir.*
     - **tags**: cadena de texto que representa una etiqueta relacionada como palabra clave para el artículo. Para añadir varios *tags* asociados, se añadiría una propiedad *tags* por cada tag deseado a asociar.
+
+* Adicionalmente a la imagen asociada al producto, que se almacena en */images/*, se genera una imagen de tipo thumbnail asociada, la cual se almacena en */images/thumbnails/*.
 
 #### 4.3. Filtros para **NODEPOP** en *web* y en *api*
 Los filtros posibles son los que a continuación se describen, los cuales se añaden a partir de la ruta indicada para cada caso:
