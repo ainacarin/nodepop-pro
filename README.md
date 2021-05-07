@@ -28,8 +28,9 @@ Para la creación y poblado de la base de datos, se requiere disponer de la base
 Para hacer uso de la aplicación *NODEPOP*, se debe acceder a la carpeta del proyecto y seguir los siguientes pasos:
 1. Ejecutar el comando *npm install* para instalar todo lo necesario para hacer uso de la aplicación. 
 2. Ejecutar el comando *npm run initDB* para poblar la base de datos.
-3. Ejecutar el comando *npm run dev* para arrancar e iniciar la aplicación. 
-4. Ejecutar el comando *npm run microservices* para arrancar el microservicio correspondiente.
+3. Crear un fichero *.env* en la raíz del proyecto *nodepop*, es decir, dentro de la carpeta */src/*, el cual será conforme al fichero *.env.example*.
+4. Ejecutar el comando *npm run dev* para arrancar e iniciar la aplicación. 
+5. Ejecutar el comando *npm run microservices* para arrancar el microservicio correspondiente.
 
 #### 4. Guías de uso
 Una vez iniciada la aplicación, ésta permite realizar las siguientes operaciones:
