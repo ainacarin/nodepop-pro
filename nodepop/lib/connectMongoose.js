@@ -11,7 +11,7 @@ mongoose.connection.on('error', err => {
 //Connection event
 mongoose.connection.once('open', () => console.log('Conectado a MongoDB en', mongoose.connection.name));
 
-mongoose.connect('mongodb://localhost/nodepoppro', {
+mongoose.connect(process.env.MONGODB_CONNECTION_STR, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true

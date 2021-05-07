@@ -20,7 +20,7 @@ class AuthController {
             return;
           }
     
-          jwt.sign({ _id: userDb.id }, '20+(gokuvegeta)dragon-ball+21', { expiresIn: '2h'}, (error, jwtToken) => {
+          jwt.sign({ _id: userDb.id }, process.env.JWT_SECRET, { expiresIn: '2h'}, (error, jwtToken) => {
             if(error) {
                 next(error);
                 return;

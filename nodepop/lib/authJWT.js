@@ -13,7 +13,7 @@ module.exports = (req, res, next) => {
         next(error);
         return;
     } 
-    jwt.verify(jwtToken, '20+(gokuvegeta)dragon-ball+21', (error, payloadToken) => {
+    jwt.verify(jwtToken, process.env.JWT_SECRET, (error, payloadToken) => {
         if(error) {
             error.status = 401;
             next(error);
