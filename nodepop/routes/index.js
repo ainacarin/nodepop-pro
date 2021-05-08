@@ -12,7 +12,7 @@ const imagesPath = 'images/';
 router.get('/', async function(req, res, next) {
   try {
     res.locals.title = 'NODEPOP';
-    res.locals.subtitle = '¡Compra o vende!';
+    res.locals.subtitle = res.__('¡Compra o vende!');
 
     const advertisementsResults = await Advertisement.list(req.query);
     advertisementsResults.forEach(advertisement => {
@@ -36,7 +36,7 @@ router.get('/', async function(req, res, next) {
 router.get('/tags', async function(req, res, next) {
   try {
     res.locals.title = 'NODEPOP';
-    res.locals.subtitle = 'TAGS disponibles';
+    res.locals.subtitle = res.__('TAGS disponibles');
 
     const tagsResults = await Advertisement.distinct("tags");
     
