@@ -1,5 +1,7 @@
 'user strict';
 
+require('dotenv').config();
+
 const mongoose = require('mongoose');
 const Advertisement = require('../models/Advertisement');
 const User = require('../models/User');
@@ -61,7 +63,7 @@ mongoose.connection.on('error', err => {
 mongoose.connection.once('open', () => console.log(`Connected: MongoDB ${mongoose.connection.name} database`));
 
 //Connection and populate with data
-mongoose.connect('mongodb://localhost/nodepoppro', {
+mongoose.connect(process.env.MONGODB_CONNECTION_STR, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
