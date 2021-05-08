@@ -19,7 +19,7 @@ responder.on('thumbnail', (req, done) => {
             done(error);
         } else {
             image
-            .resize(100, 100)
+            .resize(Jimp.AUTO, 100)
             .write(`${destPath}${filename}-thumbnail.jpg`);
             done(`${destPath}${filename}-thumbnail.jpg`);
         }
