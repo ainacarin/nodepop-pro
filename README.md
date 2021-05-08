@@ -27,10 +27,10 @@ Para la creación y poblado de la base de datos, se requiere disponer de la base
 #### 3. Instalación e inicialización de la aplicación
 Para hacer uso de la aplicación *NODEPOP*, se debe acceder a la carpeta del proyecto y seguir los siguientes pasos:
 1. Ejecutar el comando *npm install* para instalar todo lo necesario para hacer uso de la aplicación. 
-2. Ejecutar el comando *npm run initDB* para poblar la base de datos.
-3. Crear un fichero *.env* en la raíz del proyecto *nodepop*, es decir, dentro de la carpeta */src/*, el cual será conforme al fichero *.env.example*.
+2. Crear un fichero *.env* en la raíz del proyecto *nodepop*, es decir, dentro de la carpeta */src/*, el cual será conforme al fichero *.env.example*.
+3. Ejecutar el comando *npm run initDB* para poblar la base de datos.
 4. Ejecutar el comando *npm run dev* para arrancar e iniciar la aplicación. 
-5. Ejecutar el comando *npm run microservices* para arrancar el microservicio correspondiente.
+5. En otra terminal, ejecutar el comando *npm run microservices* para arrancar el microservicio correspondiente.
 
 #### 4. Guías de uso
 Una vez iniciada la aplicación, ésta permite realizar las siguientes operaciones:
@@ -47,7 +47,7 @@ Una vez iniciada la aplicación, desde un navegador, las rutas de la aplicación
 
 #### 4.2. **NODEPOP** como API
 Una vez iniciada la aplicación, desde la aplicación de creación de peticiones (*Postman*), las rutas para las diferentes operaciones permitidas son:
-0. Autenticación de usuario: tipo *POST* a *localhost:3000/api/authenticate.
+0. Autenticación de usuario: tipo *POST* a *localhost:3000/api/authenticate*.
     Los parámetros a incluir en el body son:
     - **email**: cadena de texto con el email del usuario.
     - **password**: cadena de texto con la contraseña del usuario. 
